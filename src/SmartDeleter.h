@@ -31,6 +31,7 @@ public:
     explicit SmartDeleter(T* Ptr);
     ~SmartDeleter();
     T* operator->();
+    T* take();
 
 private:
     T* m_Ptr;
