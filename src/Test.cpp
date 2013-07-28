@@ -15,3 +15,7 @@ Test::Test(const std::string &message)
 void Test::printMessage() {
     std::cout << m_Message << std::endl << std::flush;
 }
+
+std::string Test::message() {
+    return m_Message;
+}
