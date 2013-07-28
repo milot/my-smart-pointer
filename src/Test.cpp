@@ -16,6 +16,6 @@ void Test::printMessage() {
     std::cout << m_Message << std::endl << std::flush;
 }
 
-std::string Test::message() {
+std::string Test::message() const {
     return m_Message;
 }

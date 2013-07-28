@@ -28,7 +28,7 @@ public:
     Test();
     explicit Test(const std::string& message);
     void printMessage();
-    std::string message();
+    std::string message() const;
 
 private:
     std::string m_Message;
