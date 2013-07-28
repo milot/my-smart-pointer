@@ -13,6 +13,14 @@ T* SmartDeleter<T>::operator->() {
 }
 
 template<class T>
+T* SmartDeleter<T>::take() {
+    T* oldPtr = m_Ptr;
+    m_Ptr = nullptr;
+
+    return oldPtr;
+}
+
+template<class T>
 SmartDeleter<T>::~SmartDeleter()
 {
     delete m_Ptr;
