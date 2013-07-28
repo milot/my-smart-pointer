@@ -2,26 +2,26 @@
 
 template<class T>
 SmartDeleter<T>::SmartDeleter(T *Ptr)
-    : m_Ptr(Ptr)
+    : data(Ptr)
 {
 
 }
 
 template<class T>
 T* SmartDeleter<T>::operator->() {
-    return m_Ptr;
+    return data;
 }
 
 template<class T>
 T* SmartDeleter<T>::take() {
-    T* oldPtr = m_Ptr;
-    m_Ptr = nullptr;
+    T* oldData = data;
+    data = nullptr;
 
-    return oldPtr;
+    return oldData;
 }
 
 template<class T>
 SmartDeleter<T>::~SmartDeleter()
 {
-    delete m_Ptr;
+    delete data;
 }

@@ -34,5 +34,5 @@ public:
     T* take();
 
 private:
-    T* m_Ptr;
+    T* data;
 };
