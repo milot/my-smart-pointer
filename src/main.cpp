@@ -1,11 +1,11 @@
 #include <iostream>
-#include "SmartDeleter.cpp"
+#include "SmartPointer.cpp"
 #include "Test.h"
 
 int main()
 {
     // Test the smart pointer.
-    SmartDeleter<Test> testObject(new Test("My message"));
+    SmartPointer<Test> testObject(new Test("My message"));
     testObject->printMessage();
 
     // Test the ownership transfer

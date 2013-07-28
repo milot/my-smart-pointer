@@ -1,7 +1,7 @@
 #pragma once
 
 /*
- * SmartDeleter.h
+ * SmartPointer.h
  *
  * @author: Milot Shala <milot.shala@gmail.com>
  *
@@ -25,11 +25,11 @@
  */
 
 template<class T>
-class SmartDeleter
+class SmartPointer
 {
 public:
-    explicit SmartDeleter(T* Ptr);
-    ~SmartDeleter();
+    explicit SmartPointer(T* Ptr);
+    ~SmartPointer();
     T* operator->();
     T* take();
 

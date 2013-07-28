@@ -1,19 +1,19 @@
-#include "SmartDeleter.h"
+#include "SmartPointer.h"
 
 template<class T>
-SmartDeleter<T>::SmartDeleter(T *Ptr)
+SmartPointer<T>::SmartPointer(T *Ptr)
     : data(Ptr)
 {
 
 }
 
 template<class T>
-T* SmartDeleter<T>::operator->() {
+T* SmartPointer<T>::operator->() {
     return data;
 }
 
 template<class T>
-T* SmartDeleter<T>::take() {
+T* SmartPointer<T>::take() {
     T* oldData = data;
     data = nullptr;
 
@@ -21,7 +21,7 @@ T* SmartDeleter<T>::take() {
 }
 
 template<class T>
-SmartDeleter<T>::~SmartDeleter()
+SmartPointer<T>::~SmartPointer()
 {
     delete data;
 }
