@@ -19,6 +19,11 @@ T* SmartPointer<T>::operator->() {
 }
 
 template<class T>
+T& SmartPointer<T>::operator *() {
+    return *data;
+}
+
+template<class T>
 T* SmartPointer<T>::take() {
     T* oldData = data;
     data = nullptr;

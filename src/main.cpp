@@ -1,6 +1,7 @@
 #include <iostream>
 #include <string>
 #include "SmartPointer.cpp"
+#include "SmartSharedPointer.cpp"
 #include "Test.h"
 
 int main()
@@ -23,6 +24,22 @@ int main()
     // It should throw the IllegalPointerSetException after uncommenting these two lines.
     //anotherTestObject.addPointer(new Test("bb"));
     //anotherTestObject->printMessage();
+
+    SmartSharedPointer<Test> testSharedPtr(new Test("MES"));
+    testSharedPtr->printMessage();
+
+    // Anonymous braces to test the scope of shared pointer
+    {
+        SmartSharedPointer<Test> testSharedPtr2 = testSharedPtr;
+        testSharedPtr2->printMessage();
+        // Destructor of testSharedPtr2 but Test object won't be deleted
+
+        SmartSharedPointer<Test> testSharedPtr3;
+        testSharedPtr3 = testSharedPtr;
+        // Destructor of testSharedPtr3 but Test object won't be deleted
+    }
+    // Destruction of testSharedPtr and Test object will be deleted.
+
 
     return 0;
 }

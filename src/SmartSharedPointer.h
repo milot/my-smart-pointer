@@ -1,13 +1,13 @@
 #pragma once
 
 /*
- * SmartPointer.h
+ * SmartSharedPointer.h
  *
  * @author: Milot Shala <milot.shala@gmail.com>
  *
  * @reference: http://is.gd/ENpfvJ
  *
- * @description: This is one of the simplest smart-pointer implementation.
+ * @description: This is one of the simplest shared-pointer implementation.
  *
  * This program is free software: you can redistribute it and/or modify
  * it under the terms of the GNU General Public License as published by
@@ -24,18 +24,24 @@
  *
  */
 
+class ReferenceCounter;
+
 template<class T>
-class SmartPointer
+class SmartSharedPointer
 {
 public:
-    SmartPointer();
-    explicit SmartPointer(T* Ptr);
-    ~SmartPointer();
+    SmartSharedPointer();
+    explicit SmartSharedPointer(T* Ptr);
+
+    // copy constructor
+    SmartSharedPointer(const SmartSharedPointer<T>& smartSharedPointer);
+
+    ~SmartSharedPointer();
     T* operator->();
     T& operator*();
-    T* take();
-    void addPointer(T* Ptr);
+    SmartSharedPointer<T>& operator=(const SmartSharedPointer<T>& smartSharedPointer);
 
 private:
     T* data;
+    ReferenceCounter* refCounter;
 };
