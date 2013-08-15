@@ -1,7 +1,6 @@
 #include "SmartSharedPointer.h"
 #include "Exceptions.h"
 #include "ReferenceCounter.h"
-#include <iostream>
 
 template<class T>
 SmartSharedPointer<T>::SmartSharedPointer()
@@ -62,6 +61,5 @@ SmartSharedPointer<T>::~SmartSharedPointer()
     if (refCounter->releaseReference() == 0) {
         delete data;
         delete refCounter;
-        std::cout << "Destructor of shared ptr" << std::endl << std::flush;
     }
 }
