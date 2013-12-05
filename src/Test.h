@@ -25,11 +25,10 @@
 class Test
 {
 public:
-    Test();
-    explicit Test(const std::string& message);
-    void printMessage();
-    std::string message() const;
-
+  Test();
+  explicit Test(const std::string& message);
+  void printMessage();
+  std::string message() const;
 private:
-    std::string m_Message;
+  std::string m_Message;
 };

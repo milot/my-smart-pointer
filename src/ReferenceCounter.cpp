@@ -6,9 +6,9 @@ ReferenceCounter::ReferenceCounter()
 }
 
 void ReferenceCounter::addReference() {
-    ++counter;
+  ++counter;
 }
 
 int ReferenceCounter::releaseReference() {
-    return --counter;
+  return --counter;
 }

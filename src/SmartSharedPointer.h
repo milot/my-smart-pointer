@@ -27,21 +27,19 @@
 class ReferenceCounter;
 
 template<class T>
-class SmartSharedPointer
-{
+class SmartSharedPointer {
 public:
-    SmartSharedPointer();
-    explicit SmartSharedPointer(T* Ptr);
+  SmartSharedPointer();
+  explicit SmartSharedPointer(T* Ptr);
 
-    // copy constructor
-    SmartSharedPointer(const SmartSharedPointer<T>& smartSharedPointer);
+  // copy constructor
+  SmartSharedPointer(const SmartSharedPointer<T>& smartSharedPointer);
 
-    ~SmartSharedPointer();
-    T* operator->();
-    T& operator*();
-    SmartSharedPointer<T>& operator=(const SmartSharedPointer<T>& smartSharedPointer);
-
+  ~SmartSharedPointer();
+  T* operator->();
+  T& operator*();
+  SmartSharedPointer<T>& operator=(const SmartSharedPointer<T>& smartSharedPointer);
 private:
-    T* data;
-    ReferenceCounter* refCounter;
+  T* data;
+  ReferenceCounter* refCounter;
 };

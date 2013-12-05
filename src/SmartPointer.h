@@ -25,17 +25,16 @@
  */
 
 template<class T>
-class SmartPointer
-{
+class SmartPointer {
 public:
-    SmartPointer();
-    explicit SmartPointer(T* Ptr);
-    ~SmartPointer();
-    T* operator->();
-    T& operator*();
-    T* take();
-    void addPointer(T* Ptr);
+  SmartPointer();
+  explicit SmartPointer(T* Ptr);
+  ~SmartPointer();
+  T* operator->();
+  T& operator*();
+  T* take();
+  void addPointer(T* Ptr);
 
 private:
-    T* data;
+  T* data;
 };

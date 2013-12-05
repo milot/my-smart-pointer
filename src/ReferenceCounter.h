@@ -1,12 +1,11 @@
 #pragma once
 
-class ReferenceCounter
-{
+class ReferenceCounter {
 public:
-    ReferenceCounter();
-    void addReference();
-    int releaseReference();
+  ReferenceCounter();
+  void addReference();
+  int releaseReference();
 
 private:
-    int counter;
+  int counter;
 };
